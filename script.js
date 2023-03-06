@@ -1,6 +1,6 @@
 "use strict";
 
-function getComputersChoice() {
+function getComputerChoice() {
   const choice = Math.floor(Math.random() * 3);
 
   switch (choice) {
@@ -14,4 +14,4 @@ function getComputersChoice() {
       return "SCISSORS";
   }
 }
-console.log(getComputersChoice());
+console.log(getComputerChoice());
