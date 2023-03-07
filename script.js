@@ -19,14 +19,7 @@ function getComputerChoice() {
 // Main logic of the game
 for (let i = 0; i < 5; i++) {
   function playRound(playerSelection, computerSelection) {
-    if (playerSelection.toUpperCase() === computerSelection) {
-      return "It's a Draw";
-    } else if (
-      playerSelection.toUpperCase() === "ROCK" &&
-      computerSelection === "PAPER"
-    ) {
-      return "You Lose! Paper beats Rock";
-    } else if (
+    if (
       playerSelection.toUpperCase() === "ROCK" &&
       computerSelection === "SCISSORS"
     ) {
@@ -37,32 +30,38 @@ for (let i = 0; i < 5; i++) {
     ) {
       return "You Win! Paper beats Rock";
     } else if (
+      playerSelection.toUpperCase() === "SCISSORS" &&
+      computerSelection === "PAPER"
+    ) {
+      return "You Win! Scissors beat Paper";
+    } else if (
+      playerSelection.toUpperCase() === "ROCK" &&
+      computerSelection === "PAPER"
+    ) {
+      return "You Lose! Paper beats Rock";
+    } else if (
       playerSelection.toUpperCase() === "PAPER" &&
       computerSelection === "SCISSORS"
     ) {
       return "You Lose! Scissors beats Paper";
     } else if (
       playerSelection.toUpperCase() === "SCISSORS" &&
-      computerSelection === "PAPER"
-    ) {
-      return "You Win! Scissors beat Paper";
-    } else if (
-      playerSelection.toUpperCase() === "SCISSORS" &&
       computerSelection === "ROCK"
     ) {
       return "You Lose! Rock beats Scissors";
+    } else {
+      return "It's a Draw";
     }
   }
 
   const playerSelection = prompt("Enter Rock, Paper or Scissors:");
   const computerSelection = getComputerChoice();
-  //   console.log(playRound(playerSelection, computerSelection));
   console.log("Player Selection:", playerSelection.toUpperCase());
   console.log("Computer Selection:", computerSelection);
 
   function game() {
-    let result = playRound(playerSelection, computerSelection);
-    return result;
+    let gameResult = playRound(playerSelection, computerSelection);
+    return gameResult;
   }
   console.log(game());
 }
