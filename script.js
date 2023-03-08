@@ -17,37 +17,47 @@ function getComputerChoice() {
 }
 
 // Main logic of the game
+
+let playerScore = 0;
+let computerScore = 0;
+
 for (let i = 0; i < 5; i++) {
   function playRound(playerSelection, computerSelection) {
     if (
       playerSelection.toUpperCase() === "ROCK" &&
       computerSelection === "SCISSORS"
     ) {
+      playerScore++;
       return "You Win! Rock beats Scissors";
     } else if (
       playerSelection.toUpperCase() === "PAPER" &&
       computerSelection === "ROCK"
     ) {
+      playerScore++;
       return "You Win! Paper beats Rock";
     } else if (
       playerSelection.toUpperCase() === "SCISSORS" &&
       computerSelection === "PAPER"
     ) {
+      playerScore++;
       return "You Win! Scissors beat Paper";
     } else if (
       playerSelection.toUpperCase() === "ROCK" &&
       computerSelection === "PAPER"
     ) {
+      computerScore++;
       return "You Lose! Paper beats Rock";
     } else if (
       playerSelection.toUpperCase() === "PAPER" &&
       computerSelection === "SCISSORS"
     ) {
+      computerScore++;
       return "You Lose! Scissors beats Paper";
     } else if (
       playerSelection.toUpperCase() === "SCISSORS" &&
       computerSelection === "ROCK"
     ) {
+      computerScore++;
       return "You Lose! Rock beats Scissors";
     } else {
       return "It's a Draw";
@@ -65,3 +75,16 @@ for (let i = 0; i < 5; i++) {
   }
   console.log(game());
 }
+
+console.log(`Player Score is: ${playerScore}`);
+console.log(`Computer Score is: ${computerScore}`);
+function printScore() {
+  if (playerScore > computerScore) {
+    return "Player Wins!";
+  } else if (computerScore > playerScore) {
+    return "Computer Wins!";
+  } else {
+    return "It's a Draw";
+  }
+}
+console.log(printScore());
