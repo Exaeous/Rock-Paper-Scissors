@@ -28,37 +28,37 @@ for (let i = 0; i < 5; i++) {
       computerSelection === "SCISSORS"
     ) {
       playerScore++;
-      return "You Win! Rock beats Scissors";
+      return `You Win! Rock beats Scissors. Your score is ${playerScore}`;
     } else if (
       playerSelection.toUpperCase() === "PAPER" &&
       computerSelection === "ROCK"
     ) {
       playerScore++;
-      return "You Win! Paper beats Rock";
+      return `You Win! Paper beats Rock. Your score is ${playerScore}`;
     } else if (
       playerSelection.toUpperCase() === "SCISSORS" &&
       computerSelection === "PAPER"
     ) {
       playerScore++;
-      return "You Win! Scissors beat Paper";
+      return `You Win! Scissors beat Paper. Your score is ${playerScore}`;
     } else if (
       playerSelection.toUpperCase() === "ROCK" &&
       computerSelection === "PAPER"
     ) {
       computerScore++;
-      return "You Lose! Paper beats Rock";
+      return `You Lose! Paper beats Rock. Computer's score is ${computerScore}`;
     } else if (
       playerSelection.toUpperCase() === "PAPER" &&
       computerSelection === "SCISSORS"
     ) {
       computerScore++;
-      return "You Lose! Scissors beats Paper";
+      return `You Lose! Scissors beats Paper. Computer's score is ${computerScore}`;
     } else if (
       playerSelection.toUpperCase() === "SCISSORS" &&
       computerSelection === "ROCK"
     ) {
       computerScore++;
-      return "You Lose! Rock beats Scissors";
+      return `You Lose! Rock beats Scissors. Computer's score is ${computerScore}`;
     } else {
       return "It's a Draw";
     }
